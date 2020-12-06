@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom';
+import styled from 'styled-components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ArchivedPost from './components/ArchivedPost';
+import Home from './components/Home';
+import Archive from './components/Archive';
+import Header from './components/Header';
+
+import data from './Posts';
+
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <Switch>
+                    <Route exact path='/' key='home'>
+                        <Home />
+                    </Route>
+                    <Route path='/archive' key='archive'>
+                        <Archive />
+                    </Route>
+                    {data.map(page => <Route
+                        path={'/' + page.id}
+                        render={
+                            () =>
+                            <ArchPage>
+                                <Header />
+                                <Title>
+                                    {page.title}
+                                </Title>
+                                <ArchivedPost title={page.title} md={page.gist}/>
+                            </ArchPage>
+                        }
+                        key={page.id}
+                    />)}
+                </Switch>
+            </Router>
+        );  
+    }
 }
 
 export default App;
+
+const ArchPage = styled.div`
+    max-height: calc(100vh - 120px);
+    padding-top: 120px;
+    background: #080808;
+`;
+const Title = styled.h1`
+    margin-left: 10vw;
+    width: 80vw;
+    padding-top: 23.584px;
+`;
