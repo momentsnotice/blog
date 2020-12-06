@@ -10,7 +10,7 @@ class Archive extends React.Component {
         let p = [];
         for (let i = 0; i < Math.min(10, posts.length); i++) {
             p.push(
-                <StyledLink key={posts[i].id} href={'/blog/' + posts[i].id}>
+                <StyledLink key={posts[i].id} href={'https://momentsnotice.github.io/blog/' + posts[i].id}>
                     {posts[i].title}
                 </StyledLink>
             );

@@ -11,7 +11,7 @@ class About extends React.Component {
             preview.push(
                 <div>
                     <TitleContainer>
-                        <PostTitle href={'/blog/' + posts[i].id}>{posts[i].title}</PostTitle>
+                        <PostTitle href={'https://momentsnotice.github.io/blog/' + posts[i].id}>{posts[i].title}</PostTitle>
                     </TitleContainer>
                     <ArchivedPost md={posts[i].gist} key={posts[i].id} />
                 </div>
@@ -22,7 +22,7 @@ class About extends React.Component {
             <Holder>
                 {preview}
                 <Footer>
-                    <StyledLink href='/blog/archive'>
+                    <StyledLink href='https://momentsnotice.github.io/blog/archive'>
                         Go To Archives
                     </StyledLink>
                 </Footer>

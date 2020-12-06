@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route
 } from 'react-router-dom';
@@ -18,14 +18,14 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path='/blog' key='home'>
+                    <Route exact path='/' key='home'>
                         <Home />
                     </Route>
-                    <Route path='/blog/archive' key='archive'>
+                    <Route path='/archive' key='archive'>
                         <Archive />
                     </Route>
                     {data.map(page => <Route
-                        path={'/blog/' + page.id}
+                        path={'/' + page.id}
                         render={
                             () =>
                             <ArchPage>
