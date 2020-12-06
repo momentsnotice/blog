@@ -5,7 +5,7 @@ class Header extends React.Component {
     render() {
         return (
             <Bar>
-                <HomeText href='https://momentsnotice.github.io/blog/'>
+                <HomeText href='https://momentsnotice.github.io/blog/#/'>
                     Moment's Notice
                 </HomeText>
             </Bar>

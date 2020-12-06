@@ -18,14 +18,14 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path='/' key='home'>
+                    <Route exact path='/#/' key='home'>
                         <Home />
                     </Route>
-                    <Route path='/archive' key='archive'>
+                    <Route path='/#/archive' key='archive'>
                         <Archive />
                     </Route>
                     {data.map(page => <Route
-                        path={'/' + page.id}
+                        path={'/#/' + page.id}
                         render={
                             () =>
                             <ArchPage>

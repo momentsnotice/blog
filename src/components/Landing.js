@@ -15,7 +15,7 @@ class Landing extends React.Component {
           Home ={'>'} Blog ={'>'} About
         </Note>
         <Note>
-          (scroll right / use arrow keys)
+          (scroll right // use arrow keys)
         </Note>
       </TopBar>
     );
